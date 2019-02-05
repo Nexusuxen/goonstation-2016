@@ -145,17 +145,16 @@
 		..()
 		reagents.add_reagent("charcoal", 100)
 
-/obj/item/reagent_containers/glass/beaker/large/brute
-	name = "styptic powder reserve tank"
-	New()
+/obj/item/reagent_containers/glass/beaker/large/brute //This used to be styptic powder - didn't change the obj name since it would require renaming it everywhere in the code
+	name = "salbutamol reserve tank"
 		..()
-		reagents.add_reagent("stypic_powder", 100)
+		reagents.add_reagent("salbutamol", 100)
 
-/obj/item/reagent_containers/glass/beaker/large/burn
-	name = "silver sulfadiazine reserve tank"
+/obj/item/reagent_containers/glass/beaker/large/burn //This used to be silver sulfazadine - didn't change the obj name since it would require renaming it everywhere in the code
+	name = "salicylic acid reserve tank"
 	New()
 		..()
-		reagents.add_reagent("silver_sulfadiazine", 100)
+		reagents.add_reagent("salicylic_acid", 100)
 
 /obj/item/reagent_containers/glass/beaker/large/happy_plant //I have to test too many fucking plant-related issues atm so I'm adding this just to make my life less annoying
 	name = "Happy Plant Mixture"
