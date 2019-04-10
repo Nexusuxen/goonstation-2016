@@ -199,7 +199,7 @@ var/global/client/ff_debugger = null
 	icon = 'ocean.dmi'
 	name = "seafloor"
 	water = 138771
-	temperature = T0C + 2 // average ocean temp on Earth is roughly 1-4 °C
+	temperature = T0C + 2 // average ocean temp on Earth is roughly 1-4 Â°C
 
 	New()
 		..()
@@ -946,6 +946,17 @@ var/global/client/ff_debugger = null
 						playsound(src, H.shoes.step_sound, 50, 1)
 				else
 					playsound(src, H.shoes.step_sound, 20, 1)
+					
+		if (M.type == /mob/living/carbon/wall/meatcube)
+			playsound(src, sound/vox/squish.ogg, 50, 1)
+		
+		if (M.type == /mob/living/carbon/wall/meatcube/clown)
+			playsound(src, pick(sound/clownstep1, sound/clownstep2), 50, 1) //oh god i hope my shitcode works
+		
+		if (M.type == /mob/living/carbon/wall/meatcube/cluwne)
+			playsound(src, pick(sound/clownstep1, sound/clownstep2), 50, 1) //oh god i hope my shitcode works
+			//i can't find the sounds for cluwnes so uh yeah RIP
+		
 		if (!M.throwing)
 			switch (src.wet)
 				if (1)
