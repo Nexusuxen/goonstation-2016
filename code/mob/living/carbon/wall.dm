@@ -261,13 +261,14 @@ name = "cluwne cube"
 			if (narrator_mode)
 				playsound(src.loc, 'sound/vox/honk.ogg', 80, 0, 0, src.get_age_pitch())
 			else
-				playsound(get_turf(src), , 50, 1) //this needs to use the sounds named 'hellhorn'
+				var/CluwneNoise = pick('sound/items/hellhorn_0','sound/items/hellhorn_1','sound/items/hellhorn_2','sound/items/hellhorn_3','sound/items/hellhorn_4','sound/items/hellhorn_5','sound/items/hellhorn_6','sound/items/hellhorn_7','sound/items/hellhorn_8','sound/items/hellhorn_9','sound/items/hellhorn_10','sound/items/hellhorn_11','sound/items/hellhorn_12')
+				playsound(get_turf(src),var/CluwneNoise, 50, 1)
 
 			spawn(50)
 				src.emote_allowed = 1
-			return "honks!"
+			return "makes a distressingly weird noise!"
 		else
-			return pick("gurgles.","shivers.","twitches.","shakes.","squirms.","cries.","squeaks.","giggles.")
+			return pick("gurgles.","shivers.","twitches.","shakes.","squirms.","cries.","squeaks.","giggles.","suffers.","visually begs for mercy")
 
 	verb/suicide()
 		set hidden = 1
