@@ -157,7 +157,7 @@ name = "clown cube"
 			return
 
 		if (prob(30))
-			src.visible_message("<span style=\"color:red\"><b>[src] [pick("quivers","pulsates","squirms","flollops","shudders","twitches","willomies","squeaks","giggles")] [pick("sadly","disgustingly","horrifically","unpleasantly","disturbingly","worryingly","pathetically","floopily","comedically","funnily")]!</b></span>")
+			src.visible_message("<span style=\"color:red\"><b>[src] [pick("quivers","pulsates","squirms","flollops","shudders","twitches","willomies","squeaks","giggles")] [pick("sadly","disgustingly","horrifically","unpleasantly","disturbingly","worryingly","pathetically","floopily","comedically","funnily","morbidly")]!</b></span>")
 
 		if (life_timer-- > 0)
 			return
@@ -215,6 +215,7 @@ name = "clown cube"
 			else
 				src.visible_message("<span style=\"color:red\"><b>The clown cube pops!</b></span>")
 				src.gib(1)
+				/obj/item/clothing/mask/clown_hat.set_loc(get_turf(src))
 				src.unlock_medal("Damned", 1)
 				src.suiciding = 0
 				return
@@ -244,7 +245,7 @@ name = "cluwne cube"
 		for (var/i = 3, i > 0, i--)
 			var/obj/item/reagent_containers/food/snacks/ingredient/meat/mysterymeat/meat = new /obj/item/reagent_containers/food/snacks/ingredient/meat/mysterymeat(src.loc)
 			meat.name = "cube steak"
-			meat.desc = "You can still hear the cursed honking cries for help..."
+			meat.desc = "Well, at least they're out of their misery..."
 
 		playsound(src.loc, "sound/effects/splat.ogg", 75, 1)
 		src.visible_message("<span style=\"color:red\"><b>The cluwne cube pops!</b></span>")
@@ -260,7 +261,7 @@ name = "cluwne cube"
 			if (narrator_mode)
 				playsound(src.loc, 'sound/vox/honk.ogg', 80, 0, 0, src.get_age_pitch())
 			else
-				playsound(get_turf(src), 'sound/item/bikehorn.ogg', 50, 1)
+				playsound(get_turf(src), , 50, 1) //this needs to use the sounds named 'hellhorn'
 
 			spawn(50)
 				src.emote_allowed = 1
@@ -294,6 +295,7 @@ name = "cluwne cube"
 			else
 				src.visible_message("<span style=\"color:red\"><b>The meat cube pops!</b></span>")
 				src.gib(1)
+				/obj/item/clothing/mask/cursedclown_hat.set_loc(get_turf(src))
 				src.unlock_medal("Damned", 1)
 				src.suiciding = 0
 				return
